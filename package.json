@@ -1,19 +1,19 @@
 {
-  "name": "your-project-name",
-  "version": "0.1.0",
-  "description": "your description",
+  "name": "gm-back-to-top",
+  "version": "1.0.0",
+  "description": "A simple back to top component",
   "keywords": [
-    "your-key-words"
+    "back to top"
   ],
   "author": {
-    "name": "your-nickname",
-    "email": "your-email@email.com"
+    "name": "gutianhuang",
+    "email": "gutianhuang@foxmail.com"
   },
   "repository": {
-    "url": "git+https://github.com/your-username/your-libs-name.git",
+    "url": "git+https://github.com/Gu-Miao/gm-back-to-top.git",
     "type": "git"
   },
-  "homepage": "https://github.com/your-username/your-libs-name",
+  "homepage": "https://github.com/Gu-Miao/gm-back-to-top",
   "license": "MIT",
   "files": [
     "package.json",
@@ -22,12 +22,12 @@
     "LICENSE",
     "dist"
   ],
-  "main": "dist/lib/your-libs-name.min.js",
-  "browser": "dist/browser/your-libs-name.min.js",
-  "module": "dist/es/your-libs-name.js",
+  "main": "dist/lib/gm-back-to-top.min.js",
+  "browser": "dist/browser/gm-back-to-top.min.js",
+  "module": "dist/es/gm-back-to-top.js",
   "scripts": {
     "start": "parcel ./src/test/index.html --out-dir .cache/tmp",
-    "build:css": "parcel build ./src/style.less --out-dir dist --experimental-scope-hoisting --out-file component-maker.min.css",
+    "build:css": "parcel build ./src/style.less --out-dir dist --experimental-scope-hoisting --out-file gm-back-to-top.min.css",
     "build:js": "rollup -c",
     "build": "npm run build:js && npm run build:css"
   },
@@ -38,6 +38,7 @@
     "@rollup/plugin-eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "less": "^4.1.1",
     "parcel-bundler": "^1.12.5",
     "prettier": "^2.3.0",
     "rollup": "^2.48.0",

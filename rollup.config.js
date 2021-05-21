@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser'
 import clear from 'rollup-plugin-clear'
 import pkg from './package.json'
 
-const name = 'Gmlist'
+const name = 'GmBackToTop'
 
 export default {
   input: 'src/index.js',
