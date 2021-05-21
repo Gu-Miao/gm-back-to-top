@@ -32,9 +32,21 @@ const instanceMap = new Map()
 function GmBackToTop(options) {
   instanceId++
 
-  const instance = { id: instanceId, ele: createBtn() }
+  const instance = {}
 
   instance.__proto__ = GmBackToTop.prototype
+
+  const readOnly = {
+    writable: false,
+    configurable: false,
+    enumerable: true
+  }
+
+  // Id and ele can not be rewrite.
+  Object.defineProperties(instance, {
+    id: { value: instanceId, ...readOnly },
+    ele: { value: createBtn(), ...readOnly }
+  })
 
   GmBackToTop.prototype.setOptions.call(instance, options)
 
@@ -70,7 +82,9 @@ GmBackToTop.prototype.setOptions = function (options = {}) {
   const newInstanceProperties = { ...defaultOptions, ...this, ...options }
   const { duration, container, visibilityHeight, done, children } = newInstanceProperties
 
-  Object.keys(newInstanceProperties).forEach(name => (this[name] = newInstanceProperties[name]))
+  Object.keys(newInstanceProperties).forEach(
+    name => !['id', 'ele'].includes(name) && (this[name] = newInstanceProperties[name])
+  )
 
   const { id, ele } = this
 
